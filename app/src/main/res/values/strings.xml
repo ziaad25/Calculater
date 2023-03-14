@@ -2,4 +2,12 @@
     <string name="app_name">StartUp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hex">hex:</string>
+    <string name="octal">octal:</string>
+    <string name="binary">binary:</string>
+    <string name="dec">dec:</string>
+    <string name="hexNameButton">Hex</string>
+    <string name="octalNameButton">Octal</string>
+    <string name="decNameButton">Dec</string>
+    <string name="binaryNameButton">Binary</string>
 </resources>
