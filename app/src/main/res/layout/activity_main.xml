@@ -9,80 +9,86 @@
     tools:context=".ui.MainActivity">
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnHex"
-        style="@style/operation"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_shape"
-        android:gravity="center"
-        android:text="@string/hexNameButton"
-        app:layout_constraintEnd_toStartOf="@+id/btnOctal"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnOctal"
-        style="@style/operation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/button_shape"
-        android:gravity="center"
-        android:text="@string/octalNameButton"
-        app:layout_constraintBottom_toBottomOf="@+id/btnHex"
-        app:layout_constraintEnd_toStartOf="@+id/btnDec"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnHex"
-        app:layout_constraintTop_toTopOf="@+id/btnHex"
-        tools:ignore="MissingConstraints" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHex"
+            style="@style/operation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_shape"
+            android:gravity="center"
+            android:text="@string/hexNameButton"
+            app:layout_constraintEnd_toStartOf="@+id/btnOctal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnDec"
-        style="@style/operation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/button_shape"
-        android:gravity="center"
-        android:text="@string/decNameButton"
-        app:layout_constraintBottom_toBottomOf="@+id/btnHex"
-        app:layout_constraintEnd_toStartOf="@+id/btnBin"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnOctal"
-        app:layout_constraintTop_toTopOf="@+id/btnHex"
-        tools:ignore="MissingConstraints" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOctal"
+            style="@style/operation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_shape"
+            android:gravity="center"
+            android:text="@string/octalNameButton"
+            app:layout_constraintEnd_toStartOf="@+id/btnDec"
+            app:layout_constraintTop_toTopOf="@+id/btnHex"
+            tools:ignore="MissingConstraints" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnBin"
-        style="@style/operation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/button_shape"
-        android:gravity="center"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDec"
+            style="@style/operation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_shape"
+            android:gravity="center"
+            android:text="@string/decNameButton"
+            app:layout_constraintEnd_toStartOf="@+id/btnBin"
+            app:layout_constraintTop_toTopOf="@+id/btnOctal"
+            tools:ignore="MissingConstraints" />
 
-        android:text="@string/binaryNameButton"
-        app:layout_constraintBottom_toBottomOf="@+id/btnHex"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnDec"
-        app:layout_constraintTop_toTopOf="@+id/btnHex"
-        tools:ignore="MissingConstraints" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBin"
+            style="@style/operation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_shape"
+            android:gravity="center"
+            android:text="@string/binaryNameButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnDec"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/tv_Input"
         style="@style/NumberInTextInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHex"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -434,9 +440,10 @@
         style="@style/NumberInResult"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="64dp"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/tv_equalHex"
-        app:layout_constraintStart_toEndOf="@+id/tv_equalHex"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_equalHex" />
 
     <TextView
@@ -444,9 +451,10 @@
         style="@style/NumberInResult"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="64dp"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/tv_equalOctal"
-        app:layout_constraintStart_toEndOf="@+id/tv_equalOctal"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_equalOctal" />
 
     <TextView
@@ -454,9 +462,10 @@
         style="@style/NumberInResult"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="64dp"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/tv_equalDec"
-        app:layout_constraintStart_toEndOf="@+id/tv_equalDec"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_equalDec" />
 
     <TextView
@@ -464,9 +473,10 @@
         style="@style/NumberInResult"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="64dp"
         android:text="0"
         app:layout_constraintBottom_toBottomOf="@+id/tv_equalBinary"
-        app:layout_constraintStart_toEndOf="@+id/tv_equalBinary"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_equalBinary" />
 
 

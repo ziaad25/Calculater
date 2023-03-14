@@ -27,7 +27,7 @@
     </style>
 
     <style name="NumberInResult">
-        <item name="android:maxLength">5</item>
+        <item name="android:maxLength">20</item>
         <item name="android:textSize">16dp</item>
         <item name="android:textColor">#DEFFFFFF</item>
         <item name="android:textAlignment">textStart</item>
