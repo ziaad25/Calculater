@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorNumber">#f1f1f6</color>
+    <color name="colorNumber">#DEF1F1F6</color>
     <color name="alphaColor">#20565e</color>
     <color name="background">#191c22</color>
     <color name="backgroundButtonColor">#262931</color>
     <color name="operationColor">#ca6f6c</color>
+    <color name="nameResult">#61FFFFFF</color>
 </resources>
